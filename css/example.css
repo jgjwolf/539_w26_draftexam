@@ -1,0 +1,106 @@
+.jump{
+   position: absolute;
+   top: -100px;
+   height: 40px; 
+   background-color: pink;
+   }
+ 
+   .jump:focus{
+   top: 10px;
+   }
+.gallery {
+   display: grid;
+   background-color: lightgray;
+   grid-template-columns: 1fr 1fr;
+   justify-items: end;
+   align-items: stretch;
+}
+.gallery img {
+   width: 45%;
+   border: black 5px double;
+   margin-top: 15px;
+   margin-right: 15px;
+}
+.gallery img:nth-child(8){
+    grid-column: 1/-1;
+    width: 80%;
+}
+
+@media screen and (min-width: 545px) {
+   .gallery {
+       background-color: black;
+       grid-template-columns: 1fr 1fr 1fr;
+       align-items: end;
+       justify-items: center;
+       
+   }
+    .gallery img {
+   width: 55%;
+
+    }
+
+   .gallery img:nth-child(even) {
+       border: orange 12px dotted;
+       grid-column: 3/-1;
+    }
+ 
+   .gallery img:nth-child(odd) {
+       grid-column: 1 / 3;
+       border: purple 13px dashed;
+   }
+}
+@media screen and (min-width: 775px) {
+   .gallery {
+       background-color: orange;
+       grid-template-columns: repeat(4, 25%);
+       /* align-items: stretch; */
+   }
+
+       .gallery img {
+        width: 65%;
+        margin-top: 25px;
+        margin-right: 25px;
+}
+
+  
+       .gallery img:nth-child(even) {
+       border: black 7px dotted;
+       
+    }
+   .gallery img:nth-child(odd) {
+       grid-column: 1 / 3;
+    border: black 7px dotted;
+   }
+      .gallery img:nth-child(odd):hover{
+       border: dotted blue 8px;
+   }
+   .gallery img:nth-child(even):hover{
+       border: dotted blue 8px;;
+   }
+    .gallery img:nth-child(3n) {
+       grid-column: 1/-1;
+    }
+}
+@media screen and (min-width: 1000px) {
+   .gallery {
+       background-color: white;
+       display:grid;
+   }
+
+   .gallery img:nth-child(3n+1) {
+       grid-column: 1 / span 2;
+   }
+   .gallery img:nth-child(3n+2) {
+       grid-column: 3 / span 2; 
+   }
+
+   .gallery img:nth-child(3n) {
+       grid-column: 2 / span 2;
+   }
+    .gallery img:nth-child(odd){
+       border: 15px black solid;
+   }
+   .gallery img:nth-child(even){
+       border:15px black solid;
+   }
+}
